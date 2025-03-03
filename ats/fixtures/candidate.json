@@ -75,5 +75,57 @@
             "created_at": "2024-03-01T12:25:00Z",
             "updated_at": "2024-03-01T12:25:00Z"
         }
-    }
+    },
+    {
+        "model": "ats.candidate",
+        "pk": "9d6fc583-a531-4dbc-b3a6-466716854697",
+        "fields": {
+            "name": "Ajay Kumar Yadav",
+            "age": 18,
+            "gender": "male",
+            "email": "ajay@yadav.com",
+            "phone": "0000000007",
+            "created_at": "2024-03-02T12:30:00Z",
+            "updated_at": "2024-03-02T12:30:00Z"
+        }
+    },
+    {
+       "model": "ats.candidate",
+        "pk": "a9c8e420-a922-4261-9244-80e7dbf7fd97",
+        "fields": {
+            "name": "Ajay Kumar",
+            "age": 28,
+            "gender": "male",
+            "email": "ajay@kumar.com",
+            "phone": "0000344007",
+            "created_at": "2024-03-02T12:30:00Z",
+            "updated_at": "2024-03-02T12:30:00Z"
+        } 
+    },
+    {
+        "model": "ats.candidate",
+         "pk": "a4ac499c-6c4f-4efa-af12-d0c67028ff57",
+         "fields": {
+             "name": "Ajay Yadav",
+             "age": 38,
+             "gender": "female",
+             "email": "ajay@yadav2.com",
+             "phone": "0000124007",
+             "created_at": "2024-03-02T12:30:00Z",
+             "updated_at": "2024-03-02T12:30:00Z"
+         } 
+     },
+     {
+        "model": "ats.candidate",
+         "pk": "1c249573-ad1a-488f-9893-5776857bc1f5",
+         "fields": {
+             "name": "Kumar Yadav",
+             "age": 48,
+             "gender": "male",
+             "email": "kumar@yadav2.com",
+             "phone": "0102124007",
+             "created_at": "2024-03-02T12:30:00Z",
+             "updated_at": "2024-03-02T12:30:00Z"
+         } 
+     }
 ]

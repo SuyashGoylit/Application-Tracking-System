@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import View
-from .models import Candidate
-from .serializers import CandidateSerializer, CandidatePostSerializer
+from django.contrib.postgres.search import TrigramSimilarity
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+
+from .models import Candidate
+from .serializers import CandidateSerializer, CandidatePostSerializer
 
 # Create your views here.
 
@@ -96,7 +98,26 @@ class CandidateListView(APIView):
         candidates = Candidate.objects.all()
         serializer = CandidateSerializer(candidates, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    
+class CandidateSearchView(APIView):
+    """
+    Candidate search view class
+    """
+    
+    def get(self, request):
+        """
+        Candidate search operation
+        """
         
+        query = request.GET.get("name", "").strip()
         
+        if not query:
+            return Response({"message": "Search query cannot be empty"}, status=status.HTTP_400_BAD_REQUEST)
+
+        candidates = Candidate.objects.annotate(
+            similarity=TrigramSimilarity('name', query)
+        ).filter(similarity__gt=0.1).order_by('-similarity')
         
-        
+        serializer = CandidateSerializer(candidates, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK) 

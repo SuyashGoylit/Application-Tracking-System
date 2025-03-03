@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from ats.views import CandidateView, CandidateListView
+from ats.views import CandidateView, CandidateListView, CandidateSearchView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ats/candidate/<str:id>', CandidateView.as_view(), name='candidate'),
     path('ats/candidateList/', CandidateListView.as_view(), name='candidate_list'),
+    path('ats/candidateSearch/', CandidateSearchView.as_view(), name='candidate_search'),
 ]
