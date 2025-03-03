@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "b96ef7d6-f78e-458c-91c6-cdadef09d0cd",
+		"name": "ATS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21072489"
+	},
+	"item": [
+		{
+			"name": "Candidate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/ats/candidate/d3b07384-d113-4fef-84c4-08f6b5c4e8f0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ats",
+						"candidate",
+						"d3b07384-d113-4fef-84c4-08f6b5c4e8f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/ats/candidate/d3b07384-d113-4fef-84c4-08f6b5c4e8f0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ats",
+						"candidate",
+						"d3b07384-d113-4fef-84c4-08f6b5c4e8f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Elizabeth W. Regina\",\n    \"age\": 61,\n    \"gender\": \"female\",\n    \"email\": \"middle.aged@queen.com\",\n    \"phone\": \"0000234519\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/ats/candidate/d3b07384-d113-4fef-84c4-08f6b5c4e8f0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ats",
+						"candidate",
+						"d3b07384-d113-4fef-84c4-08f6b5c4e8f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/ats/candidateList/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ats",
+						"candidateList",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Suyash Goylit\",\n    \"age\": 25,\n    \"gender\": \"male\",\n    \"email\": \"goylitsuyash@gmail.com\",\n    \"phone\": \"9893413192\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/ats/candidateList/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ats",
+						"candidateList",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/ats/candidateSearch/?name=Ajay Kumar Yadav",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ats",
+						"candidateSearch",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Ajay Kumar Yadav"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

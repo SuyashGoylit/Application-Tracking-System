@@ -3,7 +3,12 @@ version: '3.8'
 services:
   web:
     build: .
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: >
+      sh -c "
+      ./wait-for-it.sh my-postgres 5432 &&
+      python manage.py migrate &&
+      python manage.py loaddata candidate.json &&
+      python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
@@ -28,6 +33,7 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   pgdata:
