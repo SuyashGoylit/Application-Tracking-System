@@ -1,0 +1,79 @@
+[
+    {
+        "model": "ats.candidate",
+        "pk": "550e8400-e29b-41d4-a716-446655440000",
+        "fields": {
+            "name": "Elizabeth Windsor",
+            "age": 24,
+            "gender": "female",
+            "email": "elizabeth@england.com",
+            "phone": "0000000001",
+            "created_at": "2024-03-01T12:00:00Z",
+            "updated_at": "2024-03-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "ats.candidate",
+        "pk": "d3b07384-d113-4fef-84c4-08f6b5c4e8f0",
+        "fields": {
+            "name": "Elizabeth Regina",
+            "age": 96,
+            "gender": "female",
+            "email": "elizabeth@queen.com",
+            "phone": "000000002",
+            "created_at": "2024-03-01T12:05:00Z",
+            "updated_at": "2024-03-01T12:05:00Z"
+        }
+    },
+    {
+        "model": "ats.candidate",
+        "pk": "a15c9c16-f1ee-4a42-bba2-50dc318c79c4",
+        "fields": {
+            "name": "Philip Mountbaten",
+            "age": 98,
+            "gender": "male",
+            "email": "philip@windsor.com",
+            "phone": "0000000003",
+            "created_at": "2024-03-01T12:10:00Z",
+            "updated_at": "2024-03-01T12:10:00Z"
+        }
+    },
+    {
+        "model": "ats.candidate",
+        "pk": "f7f7f7f7-f7f7-f7f7-f7f7-f7f7f7f7f7f7",
+        "fields": {
+            "name": "Charles Windsor",
+            "age": 42,
+            "gender": "male",
+            "email": "charles@different.com",
+            "phone": "0000000004",
+            "created_at": "2024-03-01T12:15:00Z",
+            "updated_at": "2024-03-01T12:15:00Z"
+        }
+    },
+    {
+        "model": "ats.candidate",
+        "pk": "64a7e377-2aee-4fdf-826f-3ad134def4b9",
+        "fields": {
+            "name": "Anne Windsor",
+            "age": 30,
+            "email": "anne@princess.com",
+            "phone": "0000000005",
+            "created_at": "2024-03-01T12:20:00Z",
+            "updated_at": "2024-03-01T12:20:00Z"
+        }
+    },
+    {
+        "model": "ats.candidate",
+        "pk": "ec45b5fd-2c4e-4b07-8dcf-1bd7a89f0f74",
+        "fields": {
+            "name": "Diana Windsor",
+            "age": 36,
+            "gender": "female",
+            "email": "wales@tragedy.com",
+            "phone": "0000000006",
+            "created_at": "2024-03-01T12:25:00Z",
+            "updated_at": "2024-03-01T12:25:00Z"
+        }
+    }
+]

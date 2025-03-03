@@ -21,6 +21,6 @@ from ats.views import CandidateView, CandidateListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ats/candidate/', CandidateView.as_view(), name='candidate'),
-    path('ats/candidates/', CandidateListView.as_view(), name='candidates'),
+    path('ats/candidate/<str:id>', CandidateView.as_view(), name='candidate'),
+    path('ats/candidateList/', CandidateListView.as_view(), name='candidate_list'),
 ]

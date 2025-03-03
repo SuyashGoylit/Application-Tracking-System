@@ -13,50 +13,53 @@ class CandidateView(APIView):
     Candidate view class
     """
     
-    def get(self, request):
+    def get(self, request, id):
         """
         Candidate get operation
         """
         
-        candidate_id = request.GET.get('id')
-        if candidate_id:
-            candidate = Candidate.objects.get(id=candidate_id)
-            serializer = CandidateSerializer(data=candidate)
-            if serializer.is_valid():
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            
-        else:
-            candidates = Candidate.objects.all()
-            serializer = CandidateSerializer(candidates, many=True)
+        try:
+            candidate = Candidate.objects.get(id=id)
+            serializer = CandidateSerializer(candidate)
             return Response(serializer.data, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({"message": "Candidate ID not found in the database"}, status=status.HTTP_404_NOT_FOUND)
 
-    def delete(self, request):
+    def delete(self, request, id):
         """
         Candidate delete operation
         """
         
-        candidate_id = request.GET.get('id')
-        candidate = Candidate.objects.get(id=candidate_id)
-        candidate.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        try:
+            candidate = Candidate.objects.get(id=id)
+            candidate.delete()
+            return Response({"message": "Candidate deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        
+        except Exception as e:
+            return Response({"message": "Candidate ID not found in the database"}, status=status.HTTP_404_NOT_FOUND)
     
-    def put(self, request):
+    def put(self, request, id):
         """
         Candidate put operation
         """
         
-        serializer = CandidatePostSerializer(data=request.data)
+        try:
+            candidate = Candidate.objects.get(id=id)
+            
+        except Exception as e:
+            return Response({"message": "Candidate ID not found in the database"}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = CandidatePostSerializer(candidate, data=request.data)
+        
         if serializer.is_valid():
-            candidate = Candidate.objects.get(id=serializer.data['id'])
-            candidate.name = serializer.data['name']
-            candidate.age = serializer.data['age']
-            candidate.gender = serializer.data['gender']
-            candidate.email = serializer.data['email']
-            candidate.phone = serializer.data['phone']
-            candidate.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -73,12 +76,26 @@ class CandidateListView(APIView):
         
         serializer = CandidatePostSerializer(data=request.data)
         
+        
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+    def get(self, request):
+        """
+        Candidates get operation
+        """
+        
+        candidates = Candidate.objects.all()
+        serializer = CandidateSerializer(candidates, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
         
         
         
