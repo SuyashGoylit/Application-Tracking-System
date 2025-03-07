@@ -7,9 +7,9 @@ This is a Django Rest Framework based app that provides API endpoints for managi
 
 | Endpoint                                      | Method  | Description                                       |
 |-----------------------------------------------|---------|---------------------------------------------------|
-| `/ats/candidate/{id}/`                        | `GET`   | Retrieves a specific candidate by ID             |
-| `/ats/candidate/{id}/`                        | `DELETE`| Removes a specific candidate by ID               |
-| `/ats/candidate/{id}/`                        | `PUT`   | Updates a specific candidate's details           |
+| `/ats/candidate/{id}`                        | `GET`   | Retrieves a specific candidate by ID             |
+| `/ats/candidate/{id}`                        | `DELETE`| Removes a specific candidate by ID               |
+| `/ats/candidate/{id}`                        | `PUT`   | Updates a specific candidate's details           |
 | `/ats/candidateList/`                         | `POST`  | Creates a new candidate                          |
 | `/ats/candidateList/`                         | `GET`   | Retrieves all candidates                         |
 | `/ats/candidateSearch/?name=Elizabeth`        | `GET`   | Retrieves relevant candidates based on the search query |
